@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 // Importa os componentes
 import Register from './components/Register';
 import Login from './components/Login';
+import Tarefas from './components/Tarefas';
 // Importa os estilos
 import './App.css';
 
@@ -23,6 +24,7 @@ function App() {
                         <div className="navbar-nav">
                             <Link className="nav-link" to="/register">Registrar</Link>
                             <Link className="nav-link" to="/login">Login</Link>
+                            <Link className="nav-link" to="/tarefas">Tarefas</Link>
                         </div>
                     </div>
                 </nav>
@@ -30,6 +32,7 @@ function App() {
                     <Routes>
                         <Route path="/register" element={<Register />} />
                         <Route path="/login" element={<Login />} />
+                        <Route path="/tarefas" element={<Tarefas />} />
                         <Route path="/" element={<h2>Bem-vindo ao CRUD!</h2>} />
                     </Routes>
                 </div>
