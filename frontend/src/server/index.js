@@ -13,7 +13,7 @@ const sqlite3 = require('sqlite3').verbose();
 // Cria uma instância do servidor Express
 const app = express();
 app.use(cors({
-    origin: ['capacitor://192.168.56.1', 'http://192.168.56.1:3000', '*'],
+    origin: ['capacitor://localhost', 'http://localhost', '*'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
@@ -22,7 +22,7 @@ app.use(cors({
 app.use(bodyParser.json());
 
 // Conecta ao banco SQLite (arquivo 'tarefas.db')
-const db = new sqlite3.Database('./tarefas.db', (err) => {
+const db = new sqlite3.Database('../../../android/src/main/assets/tarefas.db', (err) => {
     // Verifica se houve erro na conexão
     if (err) {
         // Loga o erro no console
